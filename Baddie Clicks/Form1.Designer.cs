@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.enemiesHitLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -36,7 +35,6 @@
             this.difficultyLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.difficultyProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.startGameLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.gameOverLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,14 +68,14 @@
             // difficultyLabel
             // 
             this.difficultyLabel.Name = "difficultyLabel";
-            this.difficultyLabel.Size = new System.Drawing.Size(249, 20);
+            this.difficultyLabel.Size = new System.Drawing.Size(218, 20);
             this.difficultyLabel.Spring = true;
             this.difficultyLabel.Text = "Difficulty";
             this.difficultyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // difficultyProgressBar
             // 
-            this.difficultyProgressBar.Maximum = 700;
+            this.difficultyProgressBar.Maximum = 1500;
             this.difficultyProgressBar.Name = "difficultyProgressBar";
             this.difficultyProgressBar.Size = new System.Drawing.Size(100, 19);
             // 
@@ -88,11 +86,6 @@
             this.startGameLabel.Size = new System.Drawing.Size(101, 20);
             this.startGameLabel.Text = "Start Game!";
             this.startGameLabel.Click += new System.EventHandler(this.startGameLabel_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // gameOverLabel
             // 
@@ -135,7 +128,6 @@
         private System.Windows.Forms.ToolStripStatusLabel totalEnemiesLabel;
         private System.Windows.Forms.ToolStripStatusLabel difficultyLabel;
         private System.Windows.Forms.ToolStripProgressBar difficultyProgressBar;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel startGameLabel;
         private System.Windows.Forms.Label gameOverLabel;
     }
