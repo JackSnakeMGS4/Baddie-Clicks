@@ -13,12 +13,15 @@ namespace Baddie_Clicks
         public int totalAttacks = 0;
 
         public void Update(bool hits)
-        {
-            totalAttacks++;
+        {           
             if (hits == true)
             {
-                killCount++;
-            }          
+                killCount++;               
+            }
+            else
+            {
+                totalAttacks++;
+            }
         }
 
     }

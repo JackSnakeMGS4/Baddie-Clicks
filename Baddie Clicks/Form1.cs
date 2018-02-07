@@ -32,6 +32,7 @@ namespace Baddie_Clicks
 
         private void EnemyTimer_Tick(object sender, EventArgs e)
         {
+            playerInstructionsLabel.Visible = false;
             AddEnemy();
         }
 
@@ -42,19 +43,21 @@ namespace Baddie_Clicks
             enemy.SizeMode = PictureBoxSizeMode.AutoSize;
             enemy.Visible = false;
             Controls.Add(enemy);
+            kills.Update(false);
+            totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
             Random random = new Random();
             int x = random.Next(0, 685);
             int y = random.Next(0, 630);
             enemy.Location = new Point(x, y);
             enemy.Visible = true;
 
-            enemy.Click += Enemy_Click;
-
             if (enemy.Controls.Count > 10)
-            {            
-                gameOverLabel.Visible = true;
+            {
                 enemyTimer.Stop();
+                gameOverLabel.Visible = true;
             }
+
+            enemy.Click += Enemy_Click; 
         }
 
         private void Enemy_Click(object sender, EventArgs e)
@@ -65,7 +68,8 @@ namespace Baddie_Clicks
             {
                 //enemyDestroyed = true;
                 //ActiveForm.Refresh();
-                theBox.Visible = false;
+                theBox.Dispose();
+                //theBox.Visible = false;
 
                 if (enemyTimer.Interval > 1200)
                 {
@@ -79,27 +83,28 @@ namespace Baddie_Clicks
                 {
                     enemyTimer.Interval -= 30;
                 }
-                if (enemyTimer.Interval > 300 || enemyTimer.Interval < 300)
+                if (enemyTimer.Interval > 300)
                 {
                     enemyTimer.Interval -= 20;
+                }
+                if (enemyTimer.Interval > 50)
+                {
+                    enemyTimer.Interval -= 10;
                 }
 
                 difficultyProgressBar.Value = 1500 - enemyTimer.Interval;
                 kills.Update(true);
             }
-            else
-            {
-                kills.Update(false);
-            }
-
+            
             enemiesHitLabel.Text = "Baddies Destroyed: " + kills.killCount;
-            totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
+            
         }
 
         private void startGameLabel_Click(object sender, EventArgs e)
-        {
-            enemyTimer.Start();
+        {           
             gameOverLabel.Visible = false;
+            playerInstructionsLabel.Visible = true;
+            enemyTimer.Start();
             //sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\DST-TowerDefenseTheme.mp3");
             //sound.PlayLooping();
             music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\DST-TowerDefenseTheme.mp3";            

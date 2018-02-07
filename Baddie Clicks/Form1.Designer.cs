@@ -36,6 +36,7 @@
             this.difficultyProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.startGameLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.gameOverLabel = new System.Windows.Forms.Label();
+            this.playerInstructionsLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,13 +92,26 @@
             // 
             this.gameOverLabel.AutoSize = true;
             this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
-            this.gameOverLabel.Font = new System.Drawing.Font("Mistral", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameOverLabel.Location = new System.Drawing.Point(172, 260);
+            this.gameOverLabel.Font = new System.Drawing.Font("Mistral", 80.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLabel.Location = new System.Drawing.Point(117, 256);
             this.gameOverLabel.Name = "gameOverLabel";
-            this.gameOverLabel.Size = new System.Drawing.Size(347, 95);
+            this.gameOverLabel.Size = new System.Drawing.Size(460, 127);
             this.gameOverLabel.TabIndex = 2;
             this.gameOverLabel.Text = "Game Over!";
             this.gameOverLabel.Visible = false;
+            // 
+            // playerInstructionsLabel
+            // 
+            this.playerInstructionsLabel.AutoSize = true;
+            this.playerInstructionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.playerInstructionsLabel.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.playerInstructionsLabel.Font = new System.Drawing.Font("Mistral", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerInstructionsLabel.Location = new System.Drawing.Point(120, 368);
+            this.playerInstructionsLabel.Name = "playerInstructionsLabel";
+            this.playerInstructionsLabel.Size = new System.Drawing.Size(466, 114);
+            this.playerInstructionsLabel.TabIndex = 3;
+            this.playerInstructionsLabel.Text = "Click or Die!";
+            this.playerInstructionsLabel.Visible = false;
             // 
             // Form1
             // 
@@ -106,6 +120,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(704, 681);
+            this.Controls.Add(this.playerInstructionsLabel);
             this.Controls.Add(this.gameOverLabel);
             this.Controls.Add(this.statusStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
@@ -130,6 +145,7 @@
         private System.Windows.Forms.ToolStripProgressBar difficultyProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel startGameLabel;
         private System.Windows.Forms.Label gameOverLabel;
+        private System.Windows.Forms.Label playerInstructionsLabel;
     }
 }
 
