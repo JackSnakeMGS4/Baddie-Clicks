@@ -118,7 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DST_TowerDefenseTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DST-TowerDefenseTheme.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="eyebot2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eyebot2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Juhani_Junkala_Level_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Juhani Junkala Level 1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Juhani_Junkala__Retro_Game_Music_Pack__Title_Screen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Juhani Junkala [Retro Game Music Pack] Title Screen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

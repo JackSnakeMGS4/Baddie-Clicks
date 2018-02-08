@@ -20,8 +20,8 @@ namespace Baddie_Clicks
         //public int spawn = 1500;
         public Timer enemyTimer = new Timer();
         public BaddieKills kills = new BaddieKills();
-        //public SoundPlayer sound = new SoundPlayer();
-        public WMPLib.WindowsMediaPlayer music = new WindowsMediaPlayer();
+        public SoundPlayer sound = new SoundPlayer();
+        //public WindowsMediaPlayer music = new WindowsMediaPlayer();
 
         public Form1()
         {
@@ -105,13 +105,12 @@ namespace Baddie_Clicks
             gameOverLabel.Visible = false;
             playerInstructionsLabel.Visible = true;
             enemyTimer.Start();
-            //sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\DST-TowerDefenseTheme.mp3");
-            //sound.PlayLooping();
-            music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\DST-TowerDefenseTheme.mp3";            
-            music.controls.play();
+            sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav");
+            sound.PlayLooping();
+            //music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav";            
+            //music.controls.play();
+            //music.settings.setMode("Loop", true);
         }
-
-
 
         //private void timer1_Tick(object sender, EventArgs e)
         //{

@@ -61,12 +61,40 @@ namespace Baddie_Clicks.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] DST_TowerDefenseTheme {
+            get {
+                object obj = ResourceManager.GetObject("DST_TowerDefenseTheme", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap eyebot2 {
             get {
                 object obj = ResourceManager.GetObject("eyebot2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Juhani_Junkala__Retro_Game_Music_Pack__Title_Screen {
+            get {
+                return ResourceManager.GetStream("Juhani_Junkala__Retro_Game_Music_Pack__Title_Screen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Juhani_Junkala_Level_1 {
+            get {
+                return ResourceManager.GetStream("Juhani_Junkala_Level_1", resourceCulture);
             }
         }
     }
