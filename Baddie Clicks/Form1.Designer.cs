@@ -70,7 +70,7 @@
             // difficultyLabel
             // 
             this.difficultyLabel.Name = "difficultyLabel";
-            this.difficultyLabel.Size = new System.Drawing.Size(218, 20);
+            this.difficultyLabel.Size = new System.Drawing.Size(249, 20);
             this.difficultyLabel.Spring = true;
             this.difficultyLabel.Text = "Difficulty";
             this.difficultyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,6 +126,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

@@ -22,6 +22,7 @@ namespace Baddie_Clicks
         public BaddieKills kills = new BaddieKills();
         public SoundPlayer sound = new SoundPlayer();
         //public WindowsMediaPlayer music = new WindowsMediaPlayer();
+        public int count = 0;
 
         public Form1()
         {
@@ -50,10 +51,12 @@ namespace Baddie_Clicks
             int y = random.Next(0, 630);
             enemy.Location = new Point(x, y);
             enemy.Visible = true;
+            count++;
 
-            if (enemy.Controls.Count > 10)
+            if (count == 10)
             {
                 enemyTimer.Stop();
+                sound.Stop();
                 gameOverLabel.Visible = true;
             }
 
@@ -93,6 +96,7 @@ namespace Baddie_Clicks
                 }
 
                 difficultyProgressBar.Value = 1500 - enemyTimer.Interval;
+                count--;
                 kills.Update(true);
             }
             
@@ -105,7 +109,8 @@ namespace Baddie_Clicks
             gameOverLabel.Visible = false;
             playerInstructionsLabel.Visible = true;
             enemyTimer.Start();
-            sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav");
+            sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav ");
+            //sound.SoundLocation = Properties.Resources.Juhani_Junkala_Level_1.ToString();
             sound.PlayLooping();
             //music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav";            
             //music.controls.play();
