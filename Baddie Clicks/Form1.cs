@@ -69,12 +69,7 @@ namespace Baddie_Clicks
                 enemyTimer.Stop();
                 battleMusic.Stop();          
                 gameOverLabel.Visible = true;
-                
                 enemyCount = 0;
-                kills.totalAttacks = 0;
-                totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
-                kills.killCount = 0;
-                enemiesHitLabel.Text = "Baddies Destroyed: " + kills.killCount;
 
                 for (int i = Controls.Count - 1; i >= 0; i--)
                 {
@@ -135,10 +130,18 @@ namespace Baddie_Clicks
         {           
             gameOverLabel.Visible = false;
             enemyTimer.Interval = enemySpawnRate;
-            difficultyProgressBar.Value = 0;
+            difficultyProgressBar.Value = 0;  
+            
+            kills.totalAttacks = 0;
+            totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
+
+            kills.killCount = 0;
+            enemiesHitLabel.Text = "Baddies Destroyed: " + kills.killCount;
+
             playerInstructionsLabel.Visible = true;           
             enemyTimer.Start();
             startGameLabel.Enabled = false;
+
             battleMusic = new SoundPlayer(Properties.Resources.Juhani_Junkala_Level_1);//I GOT IT! THIS GETS THE LOCALIZED RESOURCE!!!
             //sound.SoundLocation = Properties.Resources.Juhani_Junkala_Level_1.ToString(); //This was me trying to do the above. 
             battleMusic.PlayLooping();

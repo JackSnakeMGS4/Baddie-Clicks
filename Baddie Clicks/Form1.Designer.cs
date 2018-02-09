@@ -93,6 +93,7 @@
             // 
             this.gameOverLabel.AutoSize = true;
             this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gameOverLabel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.gameOverLabel.Font = new System.Drawing.Font("Mistral", 80.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameOverLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.gameOverLabel.Location = new System.Drawing.Point(117, 256);
@@ -106,7 +107,7 @@
             // 
             this.playerInstructionsLabel.AutoSize = true;
             this.playerInstructionsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.playerInstructionsLabel.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.playerInstructionsLabel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.playerInstructionsLabel.Font = new System.Drawing.Font("Mistral", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerInstructionsLabel.ForeColor = System.Drawing.Color.Gold;
             this.playerInstructionsLabel.Location = new System.Drawing.Point(120, 542);
@@ -126,7 +127,7 @@
             this.Controls.Add(this.playerInstructionsLabel);
             this.Controls.Add(this.gameOverLabel);
             this.Controls.Add(this.statusStrip1);
-            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
