@@ -53,10 +53,20 @@ namespace Baddie_Clicks
             PictureBox enemy = new PictureBox();
             enemy.Image = Properties.Resources.eyebot2;
             enemy.SizeMode = PictureBoxSizeMode.AutoSize;
+            System.Drawing.Drawing2D.GraphicsPath graphics = new System.Drawing.Drawing2D.GraphicsPath();
+            graphics.AddEllipse(0, 0, enemy.Width - 1.97f, enemy.Height - 0.855f);
+            Region region = new Region(graphics);
+            enemy.Region = region;
             enemy.Visible = false;
             Controls.Add(enemy);
+
+            //regarding the graphics path, that code is giving me the capability of changing the look of the enemy picturebox to that of an 
+            //actual circle. The region just sets the window of the picture box to match the code the for graphics.
+            
+
             kills.Update(false);
             totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
+
             Random random = new Random();
             int x = random.Next(0, 685);
             int y = random.Next(0, 630);
