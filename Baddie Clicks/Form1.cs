@@ -98,6 +98,7 @@ namespace Baddie_Clicks
         private void Enemy_Click(object sender, EventArgs e)
         {
             PictureBox theBox = (PictureBox)sender;
+            //declares the enemy picture box that raises this event as theBox which then allows me manipulate bellow.
            
             if (theBox.Visible == true)
             {
