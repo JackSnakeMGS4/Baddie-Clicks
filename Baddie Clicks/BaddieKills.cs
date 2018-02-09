@@ -16,7 +16,7 @@ namespace Baddie_Clicks
         {           
             if (hits == true)
             {
-                killCount++;               
+                killCount++;
             }
             else
             {

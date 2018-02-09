@@ -15,7 +15,7 @@ namespace Baddie_Clicks
     public partial class Form1 : Form
     {        
         //public bool enemyDestroyed = false;
-        //public PictureBox[] myPictureBox = new PictureBox[1000];
+        //public PictureBox[] enemy = new PictureBox[1000];
         //public PictureBox myPictureBox = new PictureBox();
         //public int spawn = 1500;
         public Timer enemyTimer = new Timer();
@@ -23,12 +23,13 @@ namespace Baddie_Clicks
         public SoundPlayer sound = new SoundPlayer();
         //public WindowsMediaPlayer music = new WindowsMediaPlayer();
         public int count = 0;
+        public int timerInterval = 1500; 
 
         public Form1()
         {
             InitializeComponent();
             enemyTimer.Tick += EnemyTimer_Tick;
-            enemyTimer.Interval = 1500;           
+            enemyTimer.Interval = timerInterval;           
         }
 
         private void EnemyTimer_Tick(object sender, EventArgs e)
@@ -39,6 +40,16 @@ namespace Baddie_Clicks
 
         private void AddEnemy()
         {
+            ///<summary>
+            ///creates a new picture box object and sets all the properties of each one. Each control will then be added
+            ///to the Controls collection which starts of with 8 controls that are not picture boxes. 
+            ///the game over code contains a for loop contains the control count as the value of i. The reason for the - 1 is 
+            ///because collections are zero based. Not having the - 1 would result in a IndexOutOfRange exception.
+            ///The if statement within the for loop checks if the control is a picture box and disposes of it and placing that 
+            ///picture box up for garbage collection which is fine. At my current skill level, I believe this is acceptable
+            /// despite knowing that the for loop is only feasible due to the small number of controls. I am aware that having
+            /// a lot of controls will impact performance for the worse.
+            ///</summary>
             PictureBox enemy = new PictureBox();
             enemy.Image = Properties.Resources.eyebot2;
             enemy.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -53,11 +64,26 @@ namespace Baddie_Clicks
             enemy.Visible = true;
             count++;
 
-            if (count == 10)
+            if (count > 100)
             {
                 enemyTimer.Stop();
                 sound.Stop();
                 gameOverLabel.Visible = true;
+                count = 0;
+                kills.totalAttacks = 0;
+                totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
+                kills.killCount = 0;
+                enemiesHitLabel.Text = "Baddies Destroyed: " + kills.killCount;
+
+                for (int i = Controls.Count - 1; i >= 0; i--)
+                {
+                    if (Controls[i] is PictureBox)
+                    {
+                        Controls[i].Dispose();
+                    }
+                }
+
+                startGameLabel.Enabled = true;
             }
 
             enemy.Click += Enemy_Click; 
@@ -70,7 +96,7 @@ namespace Baddie_Clicks
             if (theBox.Visible == true)
             {
                 //enemyDestroyed = true;
-                //ActiveForm.Refresh();
+                //ActiveForm.Refresh();               
                 theBox.Dispose();
                 //theBox.Visible = false;
 
@@ -107,15 +133,18 @@ namespace Baddie_Clicks
         private void startGameLabel_Click(object sender, EventArgs e)
         {           
             gameOverLabel.Visible = false;
-            playerInstructionsLabel.Visible = true;
+            enemyTimer.Interval = timerInterval;
+            difficultyProgressBar.Value = 0;
+            playerInstructionsLabel.Visible = true;           
             enemyTimer.Start();
+            startGameLabel.Enabled = false;
             sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav ");
             //sound.SoundLocation = Properties.Resources.Juhani_Junkala_Level_1.ToString();
             sound.PlayLooping();
             //music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav";            
             //music.controls.play();
-            //music.settings.setMode("Loop", true);
-        }
+            //music.settings.setMode("Loop", true);        
+        }      
 
         //private void timer1_Tick(object sender, EventArgs e)
         //{

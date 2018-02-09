@@ -94,6 +94,7 @@
             this.gameOverLabel.AutoSize = true;
             this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
             this.gameOverLabel.Font = new System.Drawing.Font("Mistral", 80.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.gameOverLabel.Location = new System.Drawing.Point(117, 256);
             this.gameOverLabel.Name = "gameOverLabel";
             this.gameOverLabel.Size = new System.Drawing.Size(460, 127);
@@ -107,7 +108,8 @@
             this.playerInstructionsLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerInstructionsLabel.Cursor = System.Windows.Forms.Cursors.Cross;
             this.playerInstructionsLabel.Font = new System.Drawing.Font("Mistral", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerInstructionsLabel.Location = new System.Drawing.Point(120, 368);
+            this.playerInstructionsLabel.ForeColor = System.Drawing.Color.Gold;
+            this.playerInstructionsLabel.Location = new System.Drawing.Point(120, 542);
             this.playerInstructionsLabel.Name = "playerInstructionsLabel";
             this.playerInstructionsLabel.Size = new System.Drawing.Size(466, 114);
             this.playerInstructionsLabel.TabIndex = 3;
