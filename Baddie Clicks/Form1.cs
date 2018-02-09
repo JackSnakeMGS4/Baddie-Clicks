@@ -20,16 +20,16 @@ namespace Baddie_Clicks
         //public int spawn = 1500;
         public Timer enemyTimer = new Timer();
         public BaddieKills kills = new BaddieKills();
-        public SoundPlayer sound = new SoundPlayer();
+        public SoundPlayer battleMusic = new SoundPlayer();
         //public WindowsMediaPlayer music = new WindowsMediaPlayer();
-        public int count = 0;
-        public int timerInterval = 1500; 
+        public int enemyCount = 0;
+        public int enemySpawnRate = 1500; 
 
         public Form1()
         {
             InitializeComponent();
             enemyTimer.Tick += EnemyTimer_Tick;
-            enemyTimer.Interval = timerInterval;           
+            enemyTimer.Interval = enemySpawnRate;           
         }
 
         private void EnemyTimer_Tick(object sender, EventArgs e)
@@ -62,14 +62,15 @@ namespace Baddie_Clicks
             int y = random.Next(0, 630);
             enemy.Location = new Point(x, y);
             enemy.Visible = true;
-            count++;
+            enemyCount++;
 
-            if (count > 100)
+            if (enemyCount > 100)
             {
                 enemyTimer.Stop();
-                sound.Stop();
+                battleMusic.Stop();          
                 gameOverLabel.Visible = true;
-                count = 0;
+                
+                enemyCount = 0;
                 kills.totalAttacks = 0;
                 totalEnemiesLabel.Text = "# of Baddie Attacks: " + kills.totalAttacks;
                 kills.killCount = 0;
@@ -122,7 +123,7 @@ namespace Baddie_Clicks
                 }
 
                 difficultyProgressBar.Value = 1500 - enemyTimer.Interval;
-                count--;
+                enemyCount--;
                 kills.Update(true);
             }
             
@@ -133,14 +134,14 @@ namespace Baddie_Clicks
         private void startGameLabel_Click(object sender, EventArgs e)
         {           
             gameOverLabel.Visible = false;
-            enemyTimer.Interval = timerInterval;
+            enemyTimer.Interval = enemySpawnRate;
             difficultyProgressBar.Value = 0;
             playerInstructionsLabel.Visible = true;           
             enemyTimer.Start();
             startGameLabel.Enabled = false;
-            sound = new SoundPlayer(@"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav ");
-            //sound.SoundLocation = Properties.Resources.Juhani_Junkala_Level_1.ToString();
-            sound.PlayLooping();
+            battleMusic = new SoundPlayer(Properties.Resources.Juhani_Junkala_Level_1);//I GOT IT! THIS GETS THE LOCALIZED RESOURCE!!!
+            //sound.SoundLocation = Properties.Resources.Juhani_Junkala_Level_1.ToString(); //This was me trying to do the above. 
+            battleMusic.PlayLooping();
             //music.URL = @"C:\Users\jaime\Downloads\Assets for game creation\Music\BGM\Juhani Junkala Level 1.wav";            
             //music.controls.play();
             //music.settings.setMode("Loop", true);        
