@@ -98,7 +98,7 @@ namespace Baddie_Clicks
         private void Enemy_Click(object sender, EventArgs e)
         {
             PictureBox theBox = (PictureBox)sender;
-            //declares the enemy picture box that raises this event as theBox which then allows me manipulate bellow.
+            //declares the enemy picture box that raises this event as theBox which then allows me manipulate below.
            
             if (theBox.Visible == true)
             {
@@ -111,19 +111,19 @@ namespace Baddie_Clicks
                 {
                     enemyTimer.Interval -= 50;
                 }
-                if (enemyTimer.Interval > 900)
+                else if (enemyTimer.Interval > 900)
                 {
                     enemyTimer.Interval -= 40;
                 }
-                if (enemyTimer.Interval > 600)
+                else if (enemyTimer.Interval > 600)
                 {
                     enemyTimer.Interval -= 30;
                 }
-                if (enemyTimer.Interval > 300)
+                else if (enemyTimer.Interval > 300)
                 {
                     enemyTimer.Interval -= 20;
                 }
-                if (enemyTimer.Interval > 50)
+                else 
                 {
                     enemyTimer.Interval -= 10;
                 }
