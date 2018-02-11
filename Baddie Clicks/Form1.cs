@@ -123,11 +123,11 @@ namespace Baddie_Clicks
                 {
                     enemyTimer.Interval -= 20;
                 }
-                else 
+                else if (enemyTimer.Interval > 50)
                 {
                     enemyTimer.Interval -= 10;
                 }
-
+                
                 difficultyProgressBar.Value = 1500 - enemyTimer.Interval;
                 enemyCount--;
                 kills.Update(true);
